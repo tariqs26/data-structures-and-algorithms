@@ -2,7 +2,7 @@ import { describe, it, beforeEach } from "node:test"
 import assert from "node:assert"
 import { LinkedList } from "../src/linked-list"
 
-let list: LinkedList
+let list: LinkedList<number>
 
 describe("LinkedList module", () => {
   beforeEach(() => {

@@ -1,19 +1,19 @@
-class ListNode {
-  val: number
-  next: ListNode | null
-  constructor(val: number, next: ListNode | null = null) {
+class ListNode<T> {
+  val: T
+  next: ListNode<T> | null
+  constructor(val: T, next: ListNode<T> | null = null) {
     this.val = val
     this.next = next
   }
 }
 
-export class LinkedList {
-  head: ListNode | null
+export class LinkedList<T> {
+  head: ListNode<T> | null
   constructor() {
     this.head = null
   }
 
-  append(val: number): void {
+  append(val: T): void {
     if (!this.head) {
       this.head = new ListNode(val)
       return
@@ -23,11 +23,11 @@ export class LinkedList {
     current.next = new ListNode(val)
   }
 
-  prepend(val: number): void {
+  prepend(val: T): void {
     this.head = new ListNode(val, this.head)
   }
 
-  pop(): number {
+  pop(): T {
     if (!this.head) throw new Error("Cannot pop from empty list")
     let current = this.head
     while (current.next) {
@@ -55,7 +55,7 @@ export class LinkedList {
     }
   }
 
-  contains(val: number): boolean {
+  contains(val: T): boolean {
     let current = this.head
     while (current) {
       if (current.val === val) return true
