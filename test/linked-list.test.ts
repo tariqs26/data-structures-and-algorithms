@@ -19,7 +19,7 @@ describe("LinkedList module", () => {
     assert.strictEqual(list.head?.val, 5)
   })
   describe("at", () => {
-    it("index out of bounds", () => {
+    it("Index out of bounds", () => {
       assert.throws(
         () => {
           list.at(0)
@@ -29,9 +29,18 @@ describe("LinkedList module", () => {
         }
       )
     })
-    it("valid index", () => {
+    it("Valid index", () => {
       list.append(4)
       assert.deepEqual(list.at(0), 4)
+    })
+  })
+  describe("contains", () => {
+    it("Not in list", () => {
+      assert.deepEqual(list.contains(4), false)
+    })
+    it("In list", () => {
+      list.append(4)
+      assert.deepEqual(list.contains(4), true)
     })
   })
   describe("pop", () => {
