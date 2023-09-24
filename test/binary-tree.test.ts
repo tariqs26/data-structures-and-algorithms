@@ -2,9 +2,8 @@ import { describe, it, beforeEach } from "node:test"
 import { strictEqual } from "node:assert"
 import { Tree, TreeNode, depth } from "../src/binary-tree"
 
-let tree: Tree<number>
-
 describe("Binary Tree module", () => {
+  let tree: Tree<number>
   beforeEach(() => {
     tree = new Tree()
   })

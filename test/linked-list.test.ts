@@ -2,9 +2,9 @@ import { describe, it, beforeEach } from "node:test"
 import { strictEqual, throws } from "node:assert"
 import { LinkedList } from "../src/linked-list"
 
-let list: LinkedList<number>
-
 describe("LinkedList module", () => {
+  let list: LinkedList<number>
+
   beforeEach(() => {
     list = new LinkedList()
   })

@@ -2,13 +2,11 @@ import { describe, it, beforeEach } from "node:test"
 import { strictEqual, throws } from "node:assert"
 import { Stack } from "../src/stack-array"
 
-let stack: Stack<number>
-
-const errorInfo = {
-  message: "Error: Stack is empty",
-}
-
 describe("Stack Array module", () => {
+  let stack: Stack<number>
+  const errorInfo = {
+    message: "Error: Stack is empty",
+  }
   beforeEach(() => {
     stack = new Stack()
   })
