@@ -6,8 +6,10 @@
   "scripts": {
     "prestart": "tsc",
     "start": "node build/src/index.js",
+    "clean": "rm -rf build",
+    "watch": "tsc -w",
     "pretest": "tsc",
-    "test" : "node --test"
+    "test": "node --test"
   },
   "author": "Saad Tariq",
   "license": "ISC",
