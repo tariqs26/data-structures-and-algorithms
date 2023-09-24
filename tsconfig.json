@@ -3,11 +3,6 @@
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "Node",
-    "baseUrl": ".",
-    "paths": {
-      "@/src/*": ["src/*"],
-      "@/test/*": ["test/*"]
-    },
     "outDir": "build",
     "removeComments": true,
     "types": ["node"],
