@@ -1,10 +1,5 @@
 class ListNode<T> {
-  val: T
-  next: ListNode<T> | null
-  constructor(val: T, next: ListNode<T> | null = null) {
-    this.val = val
-    this.next = next
-  }
+  constructor(public val: T, public next: ListNode<T> | null = null) {}
 }
 
 export class LinkedList<T> {
