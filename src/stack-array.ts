@@ -18,13 +18,13 @@ export class Stack<T> {
   }
 
   pop() {
-    if (!this.data.length) throw new EmptyStackError()
+    if (!this.size()) throw new EmptyStackError()
     return this.data.pop()
   }
 
   peek() {
-    if (!this.data.length) throw new EmptyStackError()
-    return this.data.at(this.data.length - 1)
+    if (!this.size()) throw new EmptyStackError()
+    return this.data.at(this.size() - 1)
   }
 
   size() {
