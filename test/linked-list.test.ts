@@ -10,13 +10,13 @@ describe("LinkedList module", () => {
   })
   it("append", () => {
     list.append(4)
-    strictEqual(list.size(), 1)
-    strictEqual(list.head?.val, 4)
+    strictEqual(list.size, 1)
+    strictEqual(list.head?.data, 4)
   })
   it("prepend", () => {
     list.append(4)
     list.prepend(5)
-    strictEqual(list.head?.val, 5)
+    strictEqual(list.head?.data, 5)
   })
   describe("at", () => {
     it("Index out of bounds", () => {
@@ -57,17 +57,17 @@ describe("LinkedList module", () => {
     it("Single length list", () => {
       list.append(4)
       const val = list.pop()
-      strictEqual(list.size(), 0)
+      strictEqual(list.size, 0)
       strictEqual(val, 4)
     })
     it("Multi-length list", () => {
       list.append(4)
       list.append(5)
       let val = list.pop()
-      strictEqual(list.size(), 1)
+      strictEqual(list.size, 1)
       strictEqual(val, 5)
       val = list.pop()
-      strictEqual(list.size(), 0)
+      strictEqual(list.size, 0)
       strictEqual(val, 4)
     })
   })
