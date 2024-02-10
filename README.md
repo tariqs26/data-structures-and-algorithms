@@ -2,12 +2,25 @@
 
 - A collection of data structures implemented in TypeScript, with tests.
 
+## Data Structures
+
+- [x] Stack
+- [x] Queue
+- [x] Linked List
+- [ ] Doubly Linked List
+- [x] Binary Tree
+
+## Installation
+
+```bash
+npm i
+```
+
 ## Available Commands
 
-| Command         | Description          |
-| --------------- | -------------------- |
-| `npm i`         | Install dependencies |
-| `npm start`     | Run the main file    |
-| `npm run clean` | Remove build dir     |
-| `npm run watch` | Compile on change    |
-| `npm run test`  | Run all tests        |
+| Command         | Description       |
+| --------------- | ----------------- |
+| `npm run dev`   | Compile on change |
+| `npm start`     | Run the main file |
+| `npm run test`  | Run all tests     |
+| `npm run clean` | Remove build dir  |
