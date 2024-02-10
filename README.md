@@ -1,6 +1,6 @@
 # Data Structures
 
-A collection of data structures implemented in TypeScript, with tests using node's built-in `test` and `assert` modules.
+Data structure implementations in TypeScript, with tests using node's built-in `test` and `assert` modules.
 
 ## Data Structures
 
