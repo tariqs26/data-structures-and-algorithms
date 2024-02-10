@@ -4,6 +4,7 @@ class ListNode<T> {
 
 export class LinkedList<T> {
   head: ListNode<T> | null
+  
   constructor() {
     this.head = null
   }
