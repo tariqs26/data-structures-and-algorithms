@@ -9,7 +9,7 @@
     "clean": "rm -rf build",
     "watch": "tsc -w",
     "pretest": "tsc",
-    "test": "node --test"
+    "test": "node --test --experimental-test-coverage"
   },
   "author": "Saad Tariq",
   "license": "ISC",
