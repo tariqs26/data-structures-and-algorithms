@@ -14,7 +14,7 @@
   "author": "Saad Tariq",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.6.4",
-    "typescript": "^5.2.2"
+    "@types/node": "^20.11.17",
+    "typescript": "^5.3.3"
   }
 }
