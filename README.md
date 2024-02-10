@@ -2,7 +2,7 @@
 
 Data structure implementations in TypeScript, with tests using node's built-in `test` and `assert` modules.
 
-## Data Structures
+## Implementations
 
 - [x] Stack
 - [x] Queue
