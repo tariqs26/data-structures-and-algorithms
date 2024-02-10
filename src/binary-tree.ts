@@ -1,6 +1,6 @@
 export class TreeNode<T> {
   constructor(
-    public val: T,
+    public data: T,
     public left: TreeNode<T> | null = null,
     public right: TreeNode<T> | null = null
   ) {}
@@ -23,7 +23,9 @@ export function size(root: TreeNode<unknown> | null): number {
   return 1 + size(root.left) + size(root.right)
 }
 
-export function search<T>(root: TreeNode<T> | null, val: T): boolean {
+export function search<T>(root: TreeNode<T> | null, data: T): boolean {
   if (!root) return false
-  return root.val === val || search(root.left, val) || search(root.right, val)
+  return (
+    root.data === data || search(root.left, data) || search(root.right, data)
+  )
 }
