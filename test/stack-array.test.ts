@@ -3,7 +3,7 @@ import { strictEqual, throws } from "node:assert"
 import { Stack } from "../src/stack-array"
 
 const errorInfo = {
-  message: "Error: Stack is empty",
+  message: "Error: Cannot pop from empty stack.",
 }
 
 describe("Stack Array module", () => {
@@ -32,5 +32,11 @@ describe("Stack Array module", () => {
       strictEqual(stack.size, 0)
       strictEqual(val, 5)
     })
+  })
+
+  it("isEmpty", () => {
+    strictEqual(stack.isEmpty(), true)
+    stack.push(5)
+    strictEqual(stack.isEmpty(), false)
   })
 })
