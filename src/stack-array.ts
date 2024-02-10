@@ -17,6 +17,7 @@ export class Stack<T> {
 
   pop() {
     if (this.isEmpty()) throw new Error("Error: Cannot pop from empty stack.")
+    this.size--
     return this.data.pop()
   }
 
