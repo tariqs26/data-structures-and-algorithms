@@ -13,12 +13,12 @@ export class Tree<T> {
   }
 }
 
-export function depth(root: TreeNode<unknown> | null): number {
+export function depth<T>(root: TreeNode<T> | null): number {
   if (!root) return 0
   return 1 + Math.max(depth(root.right), depth(root.left))
 }
 
-export function size(root: TreeNode<unknown> | null): number {
+export function size<T>(root: TreeNode<T> | null): number {
   if (!root) return 0
   return 1 + size(root.left) + size(root.right)
 }
