@@ -2,36 +2,29 @@
  * Stack implementation using array
  */
 
-class EmptyStackError extends Error {
-  constructor() {
-    super("Error: Stack is empty")
-  }
-}
 export class Stack<T> {
   data: T[]
+  size: number
   constructor() {
     this.data = []
+    this.size = 0
   }
 
   push(val: T) {
     this.data.push(val)
+    this.size++
   }
 
   pop() {
-    if (!this.size()) throw new EmptyStackError()
+    if (this.isEmpty()) throw new Error("Error: Cannot pop from empty stack.")
     return this.data.pop()
   }
 
   peek() {
-    if (!this.size()) throw new EmptyStackError()
-    return this.data.at(this.size() - 1)
+    return this.data.at(-1)
   }
 
-  size() {
-    return this.data.length
-  }
-
-  clear() {
-    this.data = []
+  isEmpty() {
+    return this.size === 0
   }
 }
