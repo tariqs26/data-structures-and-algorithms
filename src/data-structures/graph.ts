@@ -1,5 +1,3 @@
-import { Stack } from "./stack-array"
-
 export class UndirectedGraph implements Graph {
   protected adj: AdjacencyList = {}
   constructor(n: number = 0) {
