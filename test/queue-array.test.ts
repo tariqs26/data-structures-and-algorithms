@@ -1,5 +1,5 @@
 import { describe, test, beforeEach, expect } from "vitest"
-import { Queue } from "../src/datastructures/queue-array"
+import { Queue } from "../src/data-structures/queue-array"
 
 const errorMessage = "Error: Cannot dequeue from empty queue."
 

@@ -1,5 +1,5 @@
 import { describe, test, beforeEach, expect } from "vitest"
-import { Stack } from "../src/datastructures/stack-array"
+import { Stack } from "../src/data-structures/stack-array"
 
 const errorMessage = "Error: Cannot pop from empty stack."
 

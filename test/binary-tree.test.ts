@@ -5,7 +5,7 @@ import {
   depth,
   size,
   search,
-} from "../src/datastructures/binary-tree"
+} from "../src/data-structures/binary-tree"
 
 describe("Binary Tree module", () => {
   let tree: Tree<number>

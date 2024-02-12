@@ -1,5 +1,5 @@
 import { describe, test, beforeEach, expect } from "vitest"
-import { LinkedList } from "../src/datastructures/linked-list"
+import { LinkedList } from "../src/data-structures/linked-list"
 
 describe("LinkedList module", () => {
   let list: LinkedList<number>
