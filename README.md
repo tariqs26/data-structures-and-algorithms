@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-Data structure implementations in TypeScript, with tests.
+Data structure and algorithm implementations and visualizations in React.
 
 ## Implementations
 
