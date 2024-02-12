@@ -1,6 +1,6 @@
-# Data Structures
+# Data Structures and Algorithms
 
-Data structure implementations in TypeScript, with tests using node's built-in `test` and `assert` modules.
+Data structure implementations in TypeScript, with tests.
 
 ## Implementations
 
@@ -18,9 +18,10 @@ npm i
 
 ## Available Commands
 
-| Command         | Description       |
-| --------------- | ----------------- |
-| `npm run dev`   | Compile on change |
-| `npm start`     | Run the main file |
-| `npm run test`  | Run all tests     |
-| `npm run clean` | Remove build dir  |
+| Command                 | Description                                            |
+| ----------------------- | ------------------------------------------------------ |
+| `npm run dev`           | Start the development server (<http://localhost:3000>) |
+| `npm run build`         | Build the project for production                       |
+| `npm run preview`       | Preview the production project                         |
+| `npm run test`          | Run all tests                                          |
+| `npm run test:coverage` | Run all tests with coverage report                     |
