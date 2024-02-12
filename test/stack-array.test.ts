@@ -1,10 +1,7 @@
-import { describe, it, beforeEach } from "node:test"
-import { strictEqual, throws } from "node:assert"
-import { Stack } from "../src/stack-array"
+import { describe, test, beforeEach, expect } from "vitest"
+import { Stack } from "../src/datastructures/stack-array"
 
-const errorInfo = {
-  message: "Error: Cannot pop from empty stack.",
-}
+const errorMessage = "Error: Cannot pop from empty stack."
 
 describe("Stack Array module", () => {
   let stack: Stack<number>
@@ -13,30 +10,30 @@ describe("Stack Array module", () => {
     stack = new Stack()
   })
 
-  it("push", () => {
+  test("push", () => {
     stack.push(4)
-    strictEqual(stack.size, 1)
-    strictEqual(stack.peek(), 4)
+    expect(stack.size).toBe(1)
+    expect(stack.peek()).toBe(4)
   })
 
   describe("pop", () => {
-    it("Empty stack", () => {
-      throws(() => {
+    test("Empty stack", () => {
+      expect(() => {
         stack.pop()
-      }, errorInfo)
+      }).toThrowError(errorMessage)
     })
 
-    it("Non-empty stack", () => {
+    test("Non-empty stack", () => {
       stack.push(5)
       const val = stack.pop()
-      strictEqual(stack.size, 0)
-      strictEqual(val, 5)
+      expect(stack.size).toBe(0)
+      expect(val).toBe(5)
     })
   })
 
-  it("isEmpty", () => {
-    strictEqual(stack.isEmpty(), true)
+  test("isEmpty", () => {
+    expect(stack.isEmpty()).toBe(true)
     stack.push(5)
-    strictEqual(stack.isEmpty(), false)
+    expect(stack.isEmpty()).toBe(false)
   })
 })

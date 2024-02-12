@@ -1,10 +1,7 @@
-import { describe, it, beforeEach } from "node:test"
-import { strictEqual, throws } from "node:assert"
-import { Queue } from "./../src/queue-array"
+import { describe, test, beforeEach, expect } from "vitest"
+import { Queue } from "../src/datastructures/queue-array"
 
-const errorInfo = {
-  message: "Error: Cannot dequeue from empty queue.",
-}
+const errorMessage = "Error: Cannot dequeue from empty queue."
 
 describe("Queue Array module", () => {
   let queue: Queue<number>
@@ -13,36 +10,36 @@ describe("Queue Array module", () => {
     queue = new Queue()
   })
 
-  it("enqueue", () => {
+  test("enqueue", () => {
     queue.enqueue(4)
-    strictEqual(queue.size, 1)
-    strictEqual(queue.front(), 4)
-    strictEqual(queue.back(), 4)
+    expect(queue.size).toBe(1)
+    expect(queue.front()).toBe(4)
+    expect(queue.back()).toBe(4)
 
     queue.enqueue(5)
-    strictEqual(queue.size, 2)
-    strictEqual(queue.front(), 4)
-    strictEqual(queue.back(), 5)
+    expect(queue.size).toBe(2)
+    expect(queue.front()).toBe(4)
+    expect(queue.back()).toBe(5)
   })
 
   describe("pop", () => {
-    it("Empty Queue", () => {
-      throws(() => {
+    test("Empty Queue", () => {
+      expect(() => {
         queue.dequeue()
-      }, errorInfo)
+      }).toThrowError(errorMessage)
     })
 
-    it("Non-empty stack", () => {
+    test("Non-empty stack", () => {
       queue.enqueue(5)
       const val = queue.dequeue()
-      strictEqual(queue.size, 0)
-      strictEqual(val, 5)
+      expect(queue.size).toBe(0)
+      expect(val).toBe(5)
     })
   })
 
-  it("isEmpty", () => {
-    strictEqual(queue.isEmpty(), true)
+  test("isEmpty", () => {
+    expect(queue.isEmpty()).toBe(true)
     queue.enqueue(5)
-    strictEqual(queue.isEmpty(), false)
+    expect(queue.isEmpty()).toBe(false)
   })
 })

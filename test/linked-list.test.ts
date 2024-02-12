@@ -1,6 +1,5 @@
-import { describe, it, beforeEach } from "node:test"
-import { strictEqual, throws } from "node:assert"
-import { LinkedList } from "../src/linked-list"
+import { describe, test, beforeEach, expect } from "vitest"
+import { LinkedList } from "../src/datastructures/linked-list"
 
 describe("LinkedList module", () => {
   let list: LinkedList<number>
@@ -8,81 +7,79 @@ describe("LinkedList module", () => {
   beforeEach(() => {
     list = new LinkedList()
   })
-  it("append", () => {
+
+  test("append", () => {
     list.append(4)
-    strictEqual(list.size, 1)
-    strictEqual(list.head?.data, 4)
+    expect(list.size).toBe(1)
+    expect(list.head?.data).toBe(4)
   })
-  it("prepend", () => {
+
+  test("prepend", () => {
     list.append(4)
     list.prepend(5)
-    strictEqual(list.head?.data, 5)
+    expect(list.head?.data).toBe(5)
   })
+
   describe("at", () => {
-    it("Index out of bounds", () => {
-      throws(
-        () => {
-          list.at(0)
-        },
-        {
-          message: "Index out of bounds",
-        }
-      )
+    test("Index out of bounds", () => {
+      expect(() => list.at(0)).toThrowError("Index out of bounds")
     })
-    it("Valid index", () => {
+    test("Valid index", () => {
       list.append(4)
-      strictEqual(list.at(0), 4)
+      expect(list.at(0)).toBe(4)
     })
   })
+
   describe("contains", () => {
-    it("Not in list", () => {
-      strictEqual(list.contains(4), false)
+    test("Not in list", () => {
+      expect(list.contains(4)).toBe(false)
     })
-    it("In list", () => {
+    test("In list", () => {
       list.append(4)
-      strictEqual(list.contains(4), true)
+      expect(list.contains(4)).toBe(true)
     })
   })
+
   describe("pop", () => {
-    it("Empty list", () => {
-      throws(
-        () => {
-          list.pop()
-        },
-        {
-          message: "Cannot pop from empty list",
-        }
-      )
+    test("Empty list", () => {
+      expect(() => list.pop()).toThrowError("Cannot pop from empty list")
     })
-    it("Single length list", () => {
+
+    test("Single length list", () => {
       list.append(4)
       const val = list.pop()
-      strictEqual(list.size, 0)
-      strictEqual(val, 4)
+      expect(list.size).toBe(0)
+      expect(val).toBe(4)
     })
-    it("Multi-length list", () => {
+
+    test("Multi-length list", () => {
       list.append(4)
       list.append(5)
+
       let val = list.pop()
-      strictEqual(list.size, 1)
-      strictEqual(val, 5)
+      expect(list.size).toBe(1)
+      expect(val).toBe(5)
+
       val = list.pop()
-      strictEqual(list.size, 0)
-      strictEqual(val, 4)
+      expect(list.size).toBe(0)
+      expect(val).toBe(4)
     })
   })
-  it("clear", () => {
+
+  test("clear", () => {
     list.append(4)
     list.clear()
-    strictEqual(list.head, null)
+    expect(list.head).toBeNull()
   })
+
   describe("toString", () => {
-    it("Empty list", () => {
-      strictEqual(list.toString(), "null")
+    test("Empty list", () => {
+      expect(list.toString()).toBe("null")
     })
-    it("Non-empty list", () => {
+
+    test("Non-empty list", () => {
       list.append(4)
-      strictEqual(list.toString(), "4 -> null")
+      expect(list.toString()).toBe("4 -> null")
     })
   })
 })
